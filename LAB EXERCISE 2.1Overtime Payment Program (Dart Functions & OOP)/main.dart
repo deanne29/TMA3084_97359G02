@@ -1,21 +1,14 @@
-class Employee {
-  String name;
-  double basicSalary;
-  double overtimeHours;
-  double overtimeRate;
+import 'myLib.dart';
 
-  Employee(
-    this.name,
-    this.basicSalary,
-    this.overtimeHours,
-    this.overtimeRate,
+void main() {
+  Employee employee = Employee(
+    'John',
+    5000.0,
+    2.0,
+    35.0,
   );
 
-  double calculateOvertimePay() {
-    return overtimeHours * overtimeRate;
-  }
+  double totalSalary = employee.calculateTotalSalary();
 
-  double calculateTotalSalary() {
-    return basicSalary + calculateOvertimePay();
-  }
+  print('Total Salary = \$${totalSalary} USD');
 }
